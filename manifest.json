@@ -1,0 +1,23 @@
+﻿{
+  "manifest_version": 3,
+  "name": "Website Data Scraper",
+  "version": "1.0",
+  "description": "Scrapes data from visited websites and stores in Google Sheets",
+  "permissions": ["activeTab", "tabs", "storage", "identity"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "oauth2": {
+    "client_id": "**YOUR_CLIENT_ID**",  // Replace with your actual Google Client ID
+    "scopes": ["https://www.googleapis.com/auth/spreadsheets"]
+  }
+}
