@@ -7,7 +7,7 @@
         chrome.identity.getAuthToken({ interactive: true }, resolve);
       });
       
-      const spreadsheetId = '**YOUR_SPREADSHEET_ID**';  // Replace with your actual Google Spreadsheet ID
+      const spreadsheetId = 'https://docs.google.com/spreadsheets/d/1xZUtDQM0ogdr7YKwwSQ0I3MqU0OWqn48e0DGdNfw2qQ/edit?usp=sharing';  // Replace with your actual Google Spreadsheet ID
       const sheetTitle = new URL(tab.url).hostname;  // Uses the website's domain as the sheet name
       
       // Append data to the new sheet
