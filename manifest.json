@@ -17,7 +17,6 @@
     "default_popup": "popup.html"
   },
   "oauth2": {
-    "client_id": "**YOUR_CLIENT_ID**",  // Replace with your actual Google Client ID
-    "scopes": ["https://www.googleapis.com/auth/spreadsheets"]
+    "client_id": "1037567930547-heuqi5d059eep140s5sau4qr9gnv2icc.apps.googleusercontent.com"
   }
 }
