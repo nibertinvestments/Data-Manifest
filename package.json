@@ -1,0 +1,122 @@
+{
+  "name": "data-manifest",
+  "version": "1.0.0",
+  "description": "Chrome extension that scrapes data from visited websites and stores in Google Sheets",
+  "main": "background.js",
+  "scripts": {
+    "lint": "eslint src/ tests/ --ext .js",
+    "lint:fix": "eslint src/ tests/ --ext .js --fix",
+    "format": "prettier --write \"**/*.{js,json,html,css,md}\"",
+    "format:check": "prettier --check \"**/*.{js,json,html,css,md}\"",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "build": "npm run lint && npm run test && npm run format:check",
+    "dev": "npm run lint:fix && npm run format",
+    "prepare": "npm run build",
+    "validate": "npm run lint && npm run test && npm run format:check"
+  },
+  "keywords": [
+    "chrome-extension",
+    "data-scraping",
+    "google-sheets",
+    "web-scraper",
+    "browser-extension"
+  ],
+  "author": "Nibert Investments",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nibertinvestments/Data-Manifest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nibertinvestments/Data-Manifest/issues"
+  },
+  "homepage": "https://github.com/nibertinvestments/Data-Manifest#readme",
+  "devDependencies": {
+    "@types/chrome": "^0.0.246",
+    "eslint": "^8.52.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "prettier": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": [
+      "<rootDir>/tests/setup.js"
+    ],
+    "testMatch": [
+      "<rootDir>/tests/**/*.test.js"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "*.js",
+      "!node_modules/**",
+      "!tests/**"
+    ],
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "html"
+    ]
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2021": true,
+      "jest": true,
+      "webextensions": true,
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2021,
+      "sourceType": "module"
+    },
+    "rules": {
+      "prettier/prettier": "error",
+      "no-unused-vars": [
+        "error",
+        {
+          "argsIgnorePattern": "^_"
+        }
+      ],
+      "no-console": [
+        "warn",
+        {
+          "allow": [
+            "error"
+          ]
+        }
+      ],
+      "prefer-const": "error",
+      "no-var": "error"
+    },
+    "globals": {
+      "chrome": "readonly",
+      "global": "writable"
+    }
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "printWidth": 80,
+    "bracketSpacing": true,
+    "arrowParens": "avoid"
+  }
+}

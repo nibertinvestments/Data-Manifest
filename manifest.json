@@ -5,16 +5,16 @@
   "description": "Scrapes data from visited websites and stores in Google Sheets",
   "permissions": ["activeTab", "tabs", "storage", "identity"],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "src/background.js"
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js"]
+      "js": ["src/content.js"]
     }
   ],
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "src/popup.html"
   },
   "oauth2": {
     "client_id": "1037567930547-heuqi5d059eep140s5sau4qr9gnv2icc.apps.googleusercontent.com"
