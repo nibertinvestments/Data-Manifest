@@ -1,4 +1,4 @@
-﻿chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
+chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
   if (changeInfo.status === 'complete' && tab.url) {
     try {
       const data = await chrome.tabs.sendMessage(tabId, { action: 'scrape' });
