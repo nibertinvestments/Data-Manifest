@@ -19,6 +19,17 @@ global.chrome = {
 // Mock fetch globally
 global.fetch = jest.fn();
 
+// Mock importScripts function for service worker
+global.importScripts = jest.fn();
+
+// Mock DATA_MANIFEST_CONFIG
+global.DATA_MANIFEST_CONFIG = {
+  SPREADSHEET_URL:
+    'https://docs.google.com/spreadsheets/d/1xZUtDQM0ogdr7YKwwSQ0I3MqU0OWqn48e0DGdNfw2qQ/edit?usp=sharing',
+  SPREADSHEET_ID: '1xZUtDQM0ogdr7YKwwSQ0I3MqU0OWqn48e0DGdNfw2qQ',
+  validate: jest.fn().mockReturnValue(true),
+};
+
 // Mock console methods to reduce noise in tests
 global.console = {
   ...console,

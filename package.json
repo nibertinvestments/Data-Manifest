@@ -107,7 +107,9 @@
     },
     "globals": {
       "chrome": "readonly",
-      "global": "writable"
+      "global": "writable",
+      "importScripts": "readonly",
+      "DATA_MANIFEST_CONFIG": "readonly"
     }
   },
   "prettier": {
